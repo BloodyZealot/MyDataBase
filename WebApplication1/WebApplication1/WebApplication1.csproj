@@ -144,6 +144,9 @@
     <Compile Include="Index.ashx.cs">
       <DependentUpon>Index.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Jobs.ashx.cs">
+      <DependentUpon>Jobs.ashx</DependentUpon>
+    </Compile>
     <Compile Include="MySqlHelper.cs" />
     <Compile Include="NVRender.cs" />
     <Compile Include="ProductView.ashx.cs">
@@ -158,6 +161,7 @@
     <Content Include="Index.ashx" />
     <Content Include="ProduectList.ashx" />
     <Content Include="ProductView.ashx" />
+    <Content Include="Jobs.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
