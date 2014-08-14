@@ -1,0 +1,16 @@
+﻿#parse("/admin/Head.html")
+
+<table>
+    <thead><tr><td>Edit</td><td>Delete</td><td>Name</td><td>Category</td></tr></thead>
+    <tbody>
+        #foreach($r in $data.rows)
+        <tr>
+            <td><a href="">Edit</a></td>
+            <td><a href="">Edit</a></td>
+            <td>$r.name</td>
+            <td>$r.category</td>
+        </tr>
+    </tbody>
+</table>
+
+#parse("/admin/Foot.html")

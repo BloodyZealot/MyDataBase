@@ -79,6 +79,9 @@
     <Content Include="css\ddsmoothmenu.css" />
     <Content Include="css\reset.css" />
     <Content Include="css\webmain.css" />
+    <Content Include="template\admin\Foot.html" />
+    <Content Include="template\admin\Head.html" />
+    <Content Include="template\admin\productslist.html" />
     <Content Include="template\guestbook.html" />
     <Content Include="images\40.png" />
     <Content Include="images\banner01.jpg" />
@@ -149,6 +152,9 @@
     </Compile>
     <Compile Include="MySqlHelper.cs" />
     <Compile Include="NVRender.cs" />
+    <Compile Include="ProductAdmin.ashx.cs">
+      <DependentUpon>ProductAdmin.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ProductView.ashx.cs">
       <DependentUpon>ProductView.ashx</DependentUpon>
     </Compile>
@@ -162,6 +168,7 @@
     <Content Include="ProduectList.ashx" />
     <Content Include="ProductView.ashx" />
     <Content Include="Jobs.ashx" />
+    <Content Include="ProductAdmin.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -169,10 +176,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="js\" />
-    <Folder Include="template\admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
