@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
+using SqlHelper;
+using Nvelocity;
 
 namespace WebApplication1
 {
@@ -13,8 +16,7 @@ namespace WebApplication1
 
         public void ProcessRequest(HttpContext context)
         {
-            context.Response.ContentType = "text/html";
-            context.Response.Write("Hello World");
+
         }
 
         public bool IsReusable

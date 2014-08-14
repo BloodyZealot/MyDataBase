@@ -5,11 +5,12 @@
     <tbody>
         #foreach($r in $data.rows)
         <tr>
-            <td><a href="">Edit</a></td>
-            <td><a href="">Edit</a></td>
-            <td>$r.name</td>
-            <td>$r.category</td>
+            <td><a href="ProductAdmin.ashx?action=edit&id=$r.ID">Edit</a></td>
+            <td><a href="ProductAdmin.ashx?action=delete&id=$r.ID">Delete</a></td>
+            <td>$r.Name</td>
+            <td>$r.CategoryID</td>
         </tr>
+        #end
     </tbody>
 </table>
 

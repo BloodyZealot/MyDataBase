@@ -9,3 +9,14 @@ F:\GitProject\GitTest\WebApplication1\WebApplication1\bin\NVelocity.xml
 F:\GitProject\GitTest\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
 F:\GitProject\GitTest\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 F:\GitProject\GitTest\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+F:\GitProject\MyDataBase\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+F:\GitProject\MyDataBase\WebApplication1\WebApplication1\bin\WebApplication1.dll
+F:\GitProject\MyDataBase\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+F:\GitProject\MyDataBase\WebApplication1\WebApplication1\bin\MySql.Data.Entity.EF5.dll
+F:\GitProject\MyDataBase\WebApplication1\WebApplication1\bin\MySql.Data.Entity.EF6.dll
+F:\GitProject\MyDataBase\WebApplication1\WebApplication1\bin\NVelocity.dll
+F:\GitProject\MyDataBase\WebApplication1\WebApplication1\bin\NVelocity.pdb
+F:\GitProject\MyDataBase\WebApplication1\WebApplication1\bin\NVelocity.xml
+F:\GitProject\MyDataBase\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+F:\GitProject\MyDataBase\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+F:\GitProject\MyDataBase\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb

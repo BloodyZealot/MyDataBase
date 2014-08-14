@@ -81,6 +81,7 @@
     <Content Include="css\webmain.css" />
     <Content Include="template\admin\Foot.html" />
     <Content Include="template\admin\Head.html" />
+    <Content Include="template\admin\productedit.html" />
     <Content Include="template\admin\productslist.html" />
     <Content Include="template\guestbook.html" />
     <Content Include="images\40.png" />

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Nvelocity;
+using SqlHelper;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -14,7 +17,26 @@ namespace WebApplication1
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/html";
-            context.Response.Write("Hello World");
+            DataTable table;
+            string html;
+            switch (context.Request["action"])
+            {
+                case "edit":
+                    int id=Convert.ToInt32(context.Request["id"]);
+                    table = MySqlHelper.ExecuteDataTable("select * from products where id=@id",
+                        new MySql.Data.MySqlClient.MySqlParameter("@id", id));
+                    if (table.Rows.Count !=1)
+                        html = "Error! You have make a worng request!";
+                    else
+                        html = NVRender.ReanderHtml("/admin/productedit.html", 
+                            new { title = "edit product", product = table.Rows[0] });
+                    break;
+                default:
+                    table = MySqlHelper.ExecuteDataTable("select * from products");
+                    html = NVRender.ReanderHtml("/admin/productslist.html", new { rows = table.Rows, title = "list" });
+                    break;
+            }
+            context.Response.Write(html);
         }
 
         public bool IsReusable

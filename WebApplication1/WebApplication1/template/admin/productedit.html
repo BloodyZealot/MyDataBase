@@ -1,0 +1,13 @@
+﻿#parse("/admin/Head.html")
+
+<form action="ProductAdmin.ashx" method="post">
+    <input type="hidden" name="productid" value="$data.product.ID" />
+    <input type="hidden" name="action" value="editlaunch" />
+
+    <input type="text" name="productname" value="$data.product.Name" /><br />
+    <input type="text" name="productmsg" value="$data.product.Msg" /><br />
+    <input type="file" name="productimage" value="" /> <br />
+    <input type="submit" value="OK" />
+</form>
+
+#parse("/admin/Foot.html")
