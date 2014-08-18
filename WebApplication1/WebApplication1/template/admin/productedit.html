@@ -11,9 +11,17 @@
 
     Name<input type="text" name="productname" value="$data.product.Name" /><br />
     Msg<input type="text" name="productmsg" value="$data.product.Msg" /><br />
-    CategoryID<input type="text" name="productcategoryid" value="$data.product.CategoryID" /><br />
-    Image<input type="file" name="productimage"/>
-
+    CategoryID<select name="productcategoryid">
+        #foreach($c in $data.category)
+        #if( $data.product.CategoryID == $c.ID ) )
+        <option selected value="$c.ID">$c.Name</option>
+        #else
+        <option value="$c.ID">$c.Name</option>
+        #end
+        #end
+    </select>
+    <br />
+    Image<input type="file" name="productimage" />
     #if($data.baseaction=="edit")
     <img src="$data.product.ImagePath" width="100" />
     #end
