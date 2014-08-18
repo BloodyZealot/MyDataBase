@@ -2,7 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>上海网聚化工有限公司</title>
+    <title>
+    #if($data.title!="")
+    $data.title --
+    #end
+    上海网聚化工有限公司
+    </title>
     <meta name="robots" content="all" />
     <meta name="keywords" content="医药原料及中间体，无机化工产品，香精香料及植物提取物，食品化工产品，有机化工产品，农资化工产品" />
     <meta name="description" content="上海网聚化工有限公司和进出口有限公司是以无机化工、有机化工、精细化工、香精香料、食品添加剂、医药原料及中间体等经营、销售为一体的高科技化工企业。" />
@@ -34,9 +39,17 @@ ddsmoothmenu.init({
         </div>
         <div id="MainMenu" class="ddsmoothmenu">
             <ul>
-                <li><a href="/template/index.html" title="公司主页" id="menu_selected"><span>公司主页</span></a></li>
-                <li><a href="/template/single.html" title="关于我们"><span>关于我们</span></a><ul class="menulevel"><li><a href="single.html" title="组织构架">组织构架</a></li><li><a href="single.html" title="公司历史">公司历史</a></li><li><a href="single.html" title="联系我们">联系我们</a></li></ul></li>
-                <li><a href="/template/products.html" title="产品展示"><span>产品展示</span></a><ul class="menulevel"><li><a href="products.html" title="医药原料及中间体">医药原料及中间体</a></li><li><a href="products.html" title="无机化工产品">无机化工产品</a></li><li><a href="products.html" title="香精香料及植物提取物">香精香料及植物提取物</a></li><li><a href="products.html" title="食品化工产品">食品化工产品</a></li><li><a href="products.html" title="有机化工产品">有机化工产品</a></li><li><a href="products.html" title="农资化工产品">农资化工产品</a></li></ul></li>
+                <li><a href="Index.ashx" title="公司主页" 
+                       #if($data.title=="")
+                       id="menu_selected"
+                       #end
+                       ><span>公司主页</span></a></li>
+                <li><a href="/template/single.html" title="关于我们" ><span>关于我们</span></a><ul class="menulevel"><li><a href="single.html" title="组织构架">组织构架</a></li><li><a href="single.html" title="公司历史">公司历史</a></li><li><a href="single.html" title="联系我们">联系我们</a></li></ul></li>
+                <li><a href="ProductList.ashx" title="产品展示"
+                       #if($data.title=="产品展示")
+                       id="menu_selected"
+                       #end
+                       ><span>产品展示</span></a><ul class="menulevel"><li><a href="products.html" title="医药原料及中间体">医药原料及中间体</a></li><li><a href="products.html" title="无机化工产品">无机化工产品</a></li><li><a href="products.html" title="香精香料及植物提取物">香精香料及植物提取物</a></li><li><a href="products.html" title="食品化工产品">食品化工产品</a></li><li><a href="products.html" title="有机化工产品">有机化工产品</a></li><li><a href="products.html" title="农资化工产品">农资化工产品</a></li></ul></li>
                 <li><a href="/template/news.html" title="新闻中心"><span>新闻中心</span></a></li>
                 <li><a href="/template/jobs.html" title="招聘信息"><span>招聘信息</span></a></li>
                 <li><a href="/template/guestbook.html" title="留言反馈"><span>留言反馈</span></a></li>

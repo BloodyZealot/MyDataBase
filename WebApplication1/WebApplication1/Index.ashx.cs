@@ -15,7 +15,7 @@ namespace WebApplication1
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/html";
-            string html = NVRender.ReanderHtml("index.html", null);
+            string html = NVRender.ReanderHtml("index.html", new {title=""});
             context.Response.Write(html);
         }
 

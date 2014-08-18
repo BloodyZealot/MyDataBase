@@ -83,6 +83,8 @@
     <Content Include="template\admin\Head.html" />
     <Content Include="template\admin\productedit.html" />
     <Content Include="template\admin\productslist.html" />
+    <Content Include="template\front\ViewFoot.html" />
+    <Content Include="template\view.html" />
     <Content Include="template\guestbook.html" />
     <Content Include="images\40.png" />
     <Content Include="images\banner01.jpg" />
@@ -159,14 +161,14 @@
     <Compile Include="ProductView.ashx.cs">
       <DependentUpon>ProductView.ashx</DependentUpon>
     </Compile>
-    <Compile Include="ProduectList.ashx.cs">
-      <DependentUpon>ProduectList.ashx</DependentUpon>
+    <Compile Include="ProductList.ashx.cs">
+      <DependentUpon>ProductList.ashx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Index.ashx" />
-    <Content Include="ProduectList.ashx" />
+    <Content Include="ProductList.ashx" />
     <Content Include="ProductView.ashx" />
     <Content Include="Jobs.ashx" />
     <Content Include="ProductAdmin.ashx" />

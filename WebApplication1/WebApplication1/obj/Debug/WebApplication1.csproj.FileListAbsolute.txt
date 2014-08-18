@@ -19,3 +19,4 @@ F:\GitProject\MyDataBase\WebApplication1\WebApplication1\bin\NVelocity.pdb
 F:\GitProject\MyDataBase\WebApplication1\WebApplication1\bin\NVelocity.xml
 F:\GitProject\MyDataBase\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 F:\GitProject\MyDataBase\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+F:\GitProject\MyDataBase\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache

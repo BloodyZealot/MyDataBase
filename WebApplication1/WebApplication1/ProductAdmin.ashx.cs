@@ -71,7 +71,9 @@ namespace WebApplication1
                     html = NVRender.ReanderHtml("/admin/productedit.html",
                             new
                             {
-                                title = "add product", baseaction = "add", category = ctable.Rows,
+                                title = "add product",
+                                baseaction = "add",
+                                category = ctable.Rows,
                                 product = new { Name = "", Msg = "", CategoryID = "" }
                             });
                     break;
@@ -106,10 +108,32 @@ namespace WebApplication1
                     }
                     break;
                 default:
-                    table = MySqlHelper.ExecuteDataTable("select products.*, productcategory.Name as 'CName'" +
-                                                                                        " from products join productcategory "
-                                                                                        + "on products.CategoryID=productcategory.ID");
-                    html = NVRender.ReanderHtml("/admin/productslist.html", new { rows = table.Rows, title = "list" });
+                    string snum = context.Request["page"];
+                    int pagenum;
+                    if (string.IsNullOrEmpty(snum))
+                        pagenum = 1;
+                    else
+                        pagenum = Convert.ToInt32(snum);
+                    int pagecount = Convert.ToInt32(MySqlHelper.ExecuteScalar("select count(*) from products"));
+                    pagecount = (int)Math.Ceiling(pagecount / 10.0);
+                    int[] array = new int[pagecount];
+                    for (int i = 0; i != pagecount; ++i)
+                        array[i] = i + 1;
+                    table = MySqlHelper.ExecuteDataTable("select products.*, productcategory.Name as 'CName' " +
+                                                                                        " from products join productcategory " +
+                                                                                        "on products.CategoryID=productcategory.ID " +
+                                                                                        "order by products.ID limit @pagenum,10 ",
+                                                             new MySql.Data.MySqlClient.MySqlParameter("@pagenum", (pagenum - 1) * 10));
+                    html = NVRender.ReanderHtml("/admin/productslist.html", new
+                                                                                                                              {
+                                                                                                                                  rows = table.Rows,
+                                                                                                                                  title = "list",
+                                                                                                                                  array = array,
+                                                                                                                                  prevpage = pagenum - 1,
+                                                                                                                                  nextpage = pagenum + 1,
+                                                                                                                                  currentpage=pagenum,
+                                                                                                                                  maxpage = pagecount
+                                                                                                                              });
                     break;
             }
             context.Response.Write(html);

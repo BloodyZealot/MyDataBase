@@ -1,5 +1,10 @@
 ﻿#parse("/admin/Head.html")
 
+<!--alink that make a new product-->
+<br />
+<a href="ProductAdmin.ashx?action=add">AddNew</a>
+
+<!--table of product-->
 <table>
     <thead><tr><td>Edit</td><td>Delete</td><td>Name</td><td>Category</td></tr></thead>
     <tbody>
@@ -13,6 +18,23 @@
         #end
     </tbody>
 </table>
-<a href="ProductAdmin.ashx?action=add">AddNew</a>
+
+#if($data.prevpage >= 1)
+<a href="ProductAdmin.ashx?page=$data.prevpage">Prev</a>&nbsp;
+#else
+Prev &nbsp;
+#end
+#foreach($r in $data.array)
+#if($data.currentpage == $r)
+$r
+#else
+<a href="ProductAdmin.ashx?page=$r">$r</a>
+#end
+#end
+#if($data.nextpage <= $data.maxpage)
+&nbsp;<a href="ProductAdmin.ashx?page=$data.nextpage">Next</a>
+#else
+&nbsp;Next
+#end
 
 #parse("/admin/Foot.html")
