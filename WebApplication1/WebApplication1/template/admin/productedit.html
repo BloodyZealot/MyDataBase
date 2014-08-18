@@ -1,13 +1,24 @@
 ﻿#parse("/admin/Head.html")
 
-<form action="ProductAdmin.ashx" method="post">
+<form action="ProductAdmin.ashx" method="post" enctype="multipart/form-data">
+
+    #if($data.baseaction=="edit")
     <input type="hidden" name="productid" value="$data.product.ID" />
     <input type="hidden" name="action" value="editlaunch" />
+    #else
+    <input type="hidden" name="action" value="addlaunch" />
+    #end
 
-    <input type="text" name="productname" value="$data.product.Name" /><br />
-    <input type="text" name="productmsg" value="$data.product.Msg" /><br />
-    <input type="file" name="productimage" value="" /> <br />
-    <input type="submit" value="OK" />
+    Name<input type="text" name="productname" value="$data.product.Name" /><br />
+    Msg<input type="text" name="productmsg" value="$data.product.Msg" /><br />
+    CategoryID<input type="text" name="productcategoryid" value="$data.product.CategoryID" /><br />
+    Image<input type="file" name="productimage"/>
+
+    #if($data.baseaction=="edit")
+    <img src="$data.product.ImagePath" width="100" />
+    #end
+
+    <br /><input type="submit" value="OK" />
 </form>
 
 #parse("/admin/Foot.html")

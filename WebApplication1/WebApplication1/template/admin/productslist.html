@@ -8,10 +8,11 @@
             <td><a href="ProductAdmin.ashx?action=edit&id=$r.ID">Edit</a></td>
             <td><a href="ProductAdmin.ashx?action=delete&id=$r.ID">Delete</a></td>
             <td>$r.Name</td>
-            <td>$r.CategoryID</td>
+            <td>$r.CName</td>
         </tr>
         #end
     </tbody>
 </table>
+<a href="ProductAdmin.ashx?action=add">AddNew</a>
 
 #parse("/admin/Foot.html")
