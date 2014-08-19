@@ -10,7 +10,7 @@
     #end
 
     Name<input type="text" name="productname" value="$data.product.Name" /><br />
-    Msg<input type="text" name="productmsg" value="$data.product.Msg" /><br />
+    Msg<textarea name="productmsg" >$data.product.Msg</textarea><br />
     CategoryID<select name="productcategoryid">
         #foreach($c in $data.category)
         #if( $data.product.CategoryID == $c.ID ) )

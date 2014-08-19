@@ -79,6 +79,7 @@
     <Content Include="css\ddsmoothmenu.css" />
     <Content Include="css\reset.css" />
     <Content Include="css\webmain.css" />
+    <Content Include="scripts\ajax.js" />
     <Content Include="template\admin\Foot.html" />
     <Content Include="template\admin\Head.html" />
     <Content Include="template\admin\productedit.html" />
