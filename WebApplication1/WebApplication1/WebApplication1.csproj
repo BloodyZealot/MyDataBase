@@ -159,6 +159,9 @@
     <Compile Include="ProductAdmin.ashx.cs">
       <DependentUpon>ProductAdmin.ashx</DependentUpon>
     </Compile>
+    <Compile Include="ProductComment.ashx.cs">
+      <DependentUpon>ProductComment.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ProductView.ashx.cs">
       <DependentUpon>ProductView.ashx</DependentUpon>
     </Compile>
@@ -173,6 +176,7 @@
     <Content Include="ProductView.ashx" />
     <Content Include="Jobs.ashx" />
     <Content Include="ProductAdmin.ashx" />
+    <Content Include="ProductComment.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

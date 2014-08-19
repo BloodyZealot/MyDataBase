@@ -29,10 +29,9 @@ namespace Nvelocity
             Template vltTemplate = vltEngine.GetTemplate(templateName);
             System.IO.StringWriter vltWriter = new System.IO.StringWriter();
             vltTemplate.Merge(vltContext, vltWriter);
-
+            
             return vltWriter.GetStringBuilder().ToString();
         }
-
         public static string ReanderHtml(string templateName, object data)
         {
             return ReanderHtml(templateName, data, "data");

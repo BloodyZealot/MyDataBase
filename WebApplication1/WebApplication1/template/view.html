@@ -1,8 +1,62 @@
 ﻿#parse("/front/Head.html")
 
-<center><h1>$data.product.Name - $data.product.CName</h1></center><br />
-<img src="$data.product.ImagePath" /><br />
-<h2>$data.product.Msg</h2>
+<script type="text/javascript" src="/scripts/ajax.js"></script>
+<script type="text/javascript">
+    function LoadComment() {
+        AjaxHandler("ProductComment.ashx?action=get&id=$data.product.ID",
+            function (result) {
+                var comments = JSON.parse(result);
+                var ulist = document.getElementById("commentlist");
+                var str = ulist.innerHTML;
+                for (var i = 0; i < comments.length; ++i) {
+                    var c = comments[i];
+                    if (str.indexOf("标题："+c.Title) >= 0)
+                        continue;
+                    else {
+                        var li = document.createElement("li");
+                        li.innerHTML = "<h3> 标题：" + c.Title + "<br />" + "内容：" + c.Msg+"</h3>";
+                        ulist.appendChild(li);
+                    }
+                }
+            });
+    }
+    function PostComment() {
+        var title = document.getElementById("title").value;
+        var msg = document.getElementById("msg").value;
+        if (title.length <= 0) {
+            alert("请输入评论标题！");
+            return;
+        }
+        AjaxHandler("ProductComment.ashx?action=post&id=$data.product.ID&title=" + title + "&msg=" + msg,
+            function (result) {
+                document.getElementById("title").value = "";
+                document.getElementById("msg").value = "";
+                LoadComment();
+            });
+    }
+</script>
 
+#if($data.miss == "miss")
+<center><h1>您所请求的产品不存在，请您检查链接后重试！</h1></center>
+#else
+
+<center><h1>$data.product.Name - $data.product.CName</h1></center>
+<br />
+<center><img src="$data.product.ImagePath" /></center>
+<br />
+<h2>$data.product.Msg</h2>
+<br />
+标题<input type="text" id="title" />
+<br />
+评论<textarea id="msg"></textarea>
+<br />
+<input type="submit" onclick="PostComment()" value="提交评论" />
+<input type="submit" onclick="LoadComment()" value="获取评论" />
+<br />
+
+<ul id="commentlist">评论列表：</ul>
+
+
+#end
 
 #parse("/front/ViewFoot.html")

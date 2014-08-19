@@ -10,7 +10,7 @@ namespace WebApplication1
     /// </summary>
     public class Jobs : IHttpHandler
     {
-
+        
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";

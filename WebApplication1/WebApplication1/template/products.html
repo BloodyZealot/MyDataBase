@@ -5,13 +5,13 @@
         <div class="site-nav">
         <span>当前位置 : </span>
         <a href="Index.ashx">公司主页</a> &gt;&gt;
-            <a href="ProductList.ashx" title="产品展示">
+            <span>
                 #if($data.category !="")
                 产品展示：$data.category
                 #else
                 产品展示：所有产品
                 #end
-            </a>
+            </span>
         </div>
         <div class="page-products">
 

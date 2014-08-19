@@ -19,22 +19,24 @@ namespace WebApplication1
             context.Response.ContentType = "text/html";
             string html;
             //TODO:Check The ID is Vaild or Not
-            int id=0;
-            try { id = Convert.ToInt32(context.Request["id"]); }
-            catch(FormatException fe)
+            int id = 0;
+            try
             {
-                html = "您的链接有误，请检查您的链接后重试！";
-            }
-            DataTable table = MySqlHelper.ExecuteDataTable("select products.*, productcategory.Name as 'CName' " +
+                id = Convert.ToInt32(context.Request["id"]);
+                DataTable table = MySqlHelper.ExecuteDataTable("select products.*, productcategory.Name as 'CName' " +
                                                                                                "from products join productcategory " +
-                                                                                               "on products.CategoryID=productcategory.ID "+
+                                                                                               "on products.CategoryID=productcategory.ID " +
                                                                                                "where products.ID=@id ",
                                                                                     new MySql.Data.MySqlClient.MySqlParameter("@id", id));
-            if(table.Rows.Count!=1)
-            {
-                html = "您请求的产品不存在，请检查您的链接后重试！";
+                if (table.Rows.Count != 1)
+                    throw new FormatException();
+                else
+                    html = NVRender.ReanderHtml("view.html", new { title = "产品详细", product = table.Rows[0] });
             }
-            html = NVRender.ReanderHtml("view.html", new { title="产品详细",product=table.Rows[0]});
+            catch (FormatException)
+            {
+                html = NVRender.ReanderHtml("view.html", new { title = "产品不存在", miss = "miss" });
+            }
             context.Response.Write(html);
         }
 
