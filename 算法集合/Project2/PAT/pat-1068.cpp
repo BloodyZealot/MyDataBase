@@ -23,6 +23,7 @@ bool slove(int deep, int starter)
 		if (slove(deep + 1, starter + 1))
 			return true;
 		remain += coins[starter];
+		while (starter + 1<n&&coins[starter + 1] == coins[starter])++starter;
 	}
 	return false;
 }
@@ -33,11 +34,6 @@ int main()
 	for (int i = 0; i != n; ++i)
 		cin >> coins[i];
 	sort(coins, coins + n);
-	for (int i = n - 1; i != 0; --i)
-		if (coins[i] < remain)
-		{
-			n = i + 1; break;
-		}
 	stack[0] = 0;
 	if (slove(0, 0))
 	{
