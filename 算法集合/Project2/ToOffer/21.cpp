@@ -8,6 +8,7 @@ using namespace std;
 template<typename T>
 class minstack
 {
+	typedef typename stack<T>::size_type stack_size;
 public :
 	minstack() :realnums(), minnums(){};
 	/*push操作的特殊之处：
@@ -36,7 +37,7 @@ public :
 		realnums.pop();
 		minnums.pop();
 	}
-	size_t size()
+	stack_size size()
 	{
 		return realnums.size();
 	}
