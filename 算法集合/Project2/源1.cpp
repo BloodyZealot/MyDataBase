@@ -5,22 +5,36 @@
 
 using namespace std;
 
-struct data
+struct null
 {
-	float f;
 };
+
+class number
+{
+public:
+	number() :v(0){};
+	number(int n) :v(n){};
+	const number operator+(const number& n)
+	{
+		return number(v + n.v);
+	}
+	friend ostream& operator<<(ostream& out, const number& n);
+private:
+	int v;
+};
+
+ostream& operator<<(ostream& out, const number& n)
+{
+	out << n.v;
+	return out;
+}
 
 int main()
 {
-	int a;
-	data b;
-	vector<int> c;
-	string d;
-	void* p = &c;
-	cout << typeid(a).name() << "\n raw " << typeid(a).raw_name() << endl;
-	cout << typeid(b).name() << "\n raw " << typeid(b).raw_name() << endl;
-	cout << typeid(c).name() << "\n raw " << typeid(c).raw_name() << endl;
-	cout << typeid(d).name() << "\n raw " << typeid(d).raw_name() << endl;
-	cout << typeid(p).name() << "\n raw " << typeid(p).raw_name() << endl;
+	cout << typeid(int).name() << endl;
+	cout << typeid(void *).name() << endl;
+	cout << typeid(1.0 + 3).name() << endl;
+	cout << typeid(number).name() << endl;
+	cout << typeid(null).name() << endl;
 	return 0;
 }

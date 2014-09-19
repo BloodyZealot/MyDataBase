@@ -3,28 +3,38 @@
 
 using namespace std;
 
-long long wall[10000];
-long long t, sum;
-int n, result;
+class base
+{
+public:
+	base(){ cout << "a"; }
+	~base(){ cout << "base"; }
+};
+
+class over :public base
+{
+public:
+	over(){ cout << "b"; }
+	~over(){ cout << "over"; }
+};
+
+template<typename T>
+void fun(T a)
+{
+	cout << "T" << endl;
+}
+
+void fun(int a)
+{
+	cout << "int" << endl;
+}
 
 int main()
 {
-	cin.sync_with_stdio(false);
-	while (cin >> n >> t){
-		for (int i = 0; i != n; ++i)
-			cin >> wall[i];
-		result = n + 1;
-		for (int i = 0, j = 0; i != n; ++i)
-		{
-			sum = wall[i];
-			for (j = i + 1; sum <= t&&j != n; ++j)
-			{
-				sum += wall[j];
-			}
-			if (j != n)
-				result = min(result, j - i);
-		}
-		cout << (result == n + 1 ? -1 : result) << endl;
-	}
+	int c(0);
+	int a;
+	a=++c;
+	cout << a << c;
+	a=c++;
+	cout << a<<c;
 	return 0;
 }
