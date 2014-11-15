@@ -1,5 +1,6 @@
 #include<iostream>
 #include<algorithm>
+#include<string>
 
 using namespace std;
 
@@ -30,11 +31,6 @@ void fun(int a)
 
 int main()
 {
-	int c(0);
-	int a;
-	a=++c;
-	cout << a << c;
-	a=c++;
-	cout << a<<c;
+	string a("a(b)c"), b("acd");
 	return 0;
 }

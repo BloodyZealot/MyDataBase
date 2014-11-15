@@ -14,6 +14,8 @@ struct snode
 	int lenth;
 	int happiness;
 };
+
+
 bool operator<(const snode& s1,const snode& s2)
 {
 	if(s1.lenth==s2.lenth)
@@ -47,6 +49,11 @@ snode resultnode;
 
 priority_queue<snode> open;
 snode tnode,nextnode;
+   
+
+
+
+
 
 void slove()
 {
@@ -97,45 +104,45 @@ void slove()
 
 int main()
 {
-	cin>>n>>k;
-	cin>>scity;
-	dict[scity]=0;
-	translate[0]=scity;
-	for(int i=1;i!=n;++i)
+	cin >> n >> k;
+	cin >> scity;
+	dict[scity] = 0;
+	translate[0] = scity;
+	for (int i = 1; i != n; ++i)
 	{
-		cin>>tempcity>>temp;
-		dict[tempcity]=i;
-		translate[i]=tempcity;
-		happy[i]=temp;
+		cin >> tempcity >> temp;
+		dict[tempcity] = i;
+		translate[i] = tempcity;
+		happy[i] = temp;
 	}
-	for(int i=0;i!=n;++i)
-		for(int j=0;j!=n;++j)
-			maps[i][j]=-1;
-	for(int i=0;i!=n;++i)
-		prevcity[i]=-1;
-	for(int i=0;i!=k;++i)
+	for (int i = 0; i != n; ++i)
+		for (int j = 0; j != n; ++j)
+			maps[i][j] = -1;
+	for (int i = 0; i != n; ++i)
+		prevcity[i] = -1;
+	for (int i = 0; i != k; ++i)
 	{
-		cin>>tempcity>>tempcity2>>temp;
-		maps[dict[tempcity]][dict[tempcity2]]=
-			maps[dict[tempcity2]][dict[tempcity]]=temp;
+		cin >> tempcity >> tempcity2 >> temp;
+		maps[dict[tempcity]][dict[tempcity2]] =
+			maps[dict[tempcity2]][dict[tempcity]] = temp;
 	}
-	dest=dict["ROM"];
-	tnode.city=tnode.lenth=tnode.happiness=tnode.deep=0;
-	tnode.prevcity=-1;
+	dest = dict["ROM"];
+	tnode.city = tnode.lenth = tnode.happiness = tnode.deep = 0;
+	tnode.prevcity = -1;
 	open.push(tnode);
 	slove();
-	cout<<num<<' '<<resultnode.lenth<<' '<<resultnode.happiness<<' '<<resultnode.happiness/resultnode.deep<<endl;
-	temp=resultnode.prevcity;
-	while(temp!=-1)
+	cout << num << ' ' << resultnode.lenth << ' ' << resultnode.happiness << ' ' << resultnode.happiness / resultnode.deep << endl;
+	temp = resultnode.prevcity;
+	while (temp != -1)
 	{
 		output.push(temp);
-		temp=prevcity[temp];
+		temp = prevcity[temp];
 	}
-	while(output.size())
+	while (output.size())
 	{
-		cout<<translate[output.top()]<<"->";
+		cout << translate[output.top()] << "->";
 		output.pop();
 	}
-	cout<<"ROM";
+	cout << "ROM";
 	return 0;
 }

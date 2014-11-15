@@ -1,9 +1,12 @@
-#include<iostream>
-
 #include<string>
 #include<vector>
-
-using namespace std;
+using std::vector;
+using std::string;
+//for test
+#include<iostream>
+using std::cout;
+using std::cin;
+using std::endl;
 
 string::size_type KMP(const string& str, const string& substr)
 {
@@ -57,5 +60,6 @@ int main()
 	string s2 = "ABCDABD";
 	string::size_type result = KMP(s1, s2);
 	cout << result<<endl<<s1.substr(result,s2.length());
+	system("pause");
 	return 0;
 }
