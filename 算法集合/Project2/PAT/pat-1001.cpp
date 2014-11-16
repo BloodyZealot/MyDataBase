@@ -30,8 +30,6 @@ int main()
 	else
 		s = "0";
 	for (int i = s.size() - 1; i != -1; --i)
-	{
 		cout << s[i];
-	}
 	return 0;
 }
