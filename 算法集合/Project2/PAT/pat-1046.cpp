@@ -2,7 +2,7 @@
 
 using namespace std;
 
-long long dist[10010];
+long long dist[100000];
 long long temp,sum,half;
 
 int main()
