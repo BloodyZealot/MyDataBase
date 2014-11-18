@@ -27,7 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pat\pat-1057-unfinished.cpp" />
+    <ClCompile Include="pat\pat-1046-unsloved.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{EDEFFA50-B9F6-483B-8644-C9124A727CE9}</ProjectGuid>
