@@ -14,8 +14,6 @@ struct snode
 	int lenth;
 	int happiness;
 };
-
-
 bool operator<(const snode& s1,const snode& s2)
 {
 	if(s1.lenth==s2.lenth)
@@ -50,11 +48,6 @@ snode resultnode;
 priority_queue<snode> open;
 snode tnode,nextnode;
    
-
-
-
-
-
 void slove()
 {
 	while(open.size())
