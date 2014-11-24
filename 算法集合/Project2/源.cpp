@@ -1,29 +1,12 @@
-/* This is sample C++ code */
-#include <cstdio>
-#include<iostream>
-#define MACRO(x) x
+#include<queue>
+
 using namespace std;
-// This comment may span only this line
-typedef unsigned int uint;
-int static myfunc(uint parameter) {
-	if (parameter == 0) fprintf(stdout, "zero\n");
-	cout << "hello\n";
-	return parameter - 1;
+
+int main()
+{
+	priority_queue<int> a;
+	a.push(1);
+	a.push(2);
+	a.push(3);
+	return 0;
 }
-class MyClass {
-public:
-	enum Number {
-		ZERO, ONE, TWO
-	};
-	static char staticField;
-	int field;
-	virtual Number vmethod();
-	void method(Number n) const {
-		int local = (int)MACRO('\0');
-	label: myfunc(local);
-		vmethod();
-		staticMethod();
-		problem();
-	}
-	static void staticMethod();
-};
