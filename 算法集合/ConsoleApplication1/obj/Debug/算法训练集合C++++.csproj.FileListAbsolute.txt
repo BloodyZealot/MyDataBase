@@ -1,6 +1,1 @@
-F:\GitProject\MyDataBase\算法集合\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
 F:\GitProject\MyDataBase\算法集合\ConsoleApplication1\obj\Debug\算法训练集合C++++.csprojResolveAssemblyReference.cache
-F:\GitProject\MyDataBase\算法集合\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
-F:\GitProject\MyDataBase\算法集合\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
-F:\GitProject\MyDataBase\算法集合\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
-F:\GitProject\MyDataBase\算法集合\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

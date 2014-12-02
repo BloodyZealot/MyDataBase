@@ -27,7 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PAT\pat-1008.cpp" />
+    <ClCompile Include="NEUQOJ\ACM比赛\F.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{EDEFFA50-B9F6-483B-8644-C9124A727CE9}</ProjectGuid>
