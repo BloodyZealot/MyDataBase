@@ -3,7 +3,7 @@
 #include <string>
 #include<cstring>
 #define five 5
-static const int size = 50;
+static const int constSize = 50;
 using namespace std;
 
 struct node
@@ -11,9 +11,9 @@ struct node
 	int x, y;
 };
 
-node nodes[size];
+node nodes[constSize];
 int temp, cnt, k, result, id;
-int v[size], m[size][size];
+int v[constSize], m[constSize][constSize];
 char arr[10][11];
 
 bool small(int a, int b)
